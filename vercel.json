@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/on-track", "destination": "/on-track.html" },
+    { "source": "/off-track", "destination": "/off-track.html" },
+    { "source": "/partnerships", "destination": "/partnerships.html" },
+    { "source": "/calendar", "destination": "/calendar.html" },
+    { "source": "/legal/privacy-policy", "destination": "/legal/privacy-policy.html" },
+    { "source": "/legal/terms-conditions", "destination": "/legal/terms-conditions.html" }
+  ]
+}

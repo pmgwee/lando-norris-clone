@@ -4,7 +4,7 @@ import { existsSync } from 'node:fs';
 
 const ROOT = '..';
 const MANIFEST = `${ROOT}/assets-prod/network-manifest.json`;
-const ASSETS = `${ROOT}/site/assets`;
+const ASSETS = `${ROOT}/public/assets`;
 const URLMAP = `${ROOT}/assets-prod/urlMap.json`;
 const REPORT = `${ROOT}/assets-prod/download-report.json`;
 
@@ -82,10 +82,10 @@ for (const w of want) {
 }
 console.log(`want: ${want.length}  unique-paths: ${queue.length}`);
 
-for (const q of queue) await mkdir(`${ROOT}/site${q.dest}`.replace(/[/\\][^/\\]+$/, ''), { recursive: true });
+for (const q of queue) await mkdir(`${ROOT}/public${q.dest}`.replace(/[/\\][^/\\]+$/, ''), { recursive: true });
 
 const fetchOne = async (q) => {
-  const out = `${ROOT}/site${q.dest}`;
+  const out = `${ROOT}/public${q.dest}`;
   if (existsSync(out)) {
     try { const st = await stat(out); if (st.size > 0) return { url: q.url, dest: q.dest, ok: true, cached: true, bytes: st.size }; } catch {}
   }

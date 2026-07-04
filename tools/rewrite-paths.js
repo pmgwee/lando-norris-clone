@@ -1,10 +1,12 @@
 // rewrite-paths.js
-// Localizes the reconstruction:
+// Localizes the reconstruction into the Vite project layout:
 //  - Rewrites every URL present in assets-prod/urlMap.json to its local /assets/... path,
 //    across the 7 HTML pages, the Webflow CSS, and the JS bundles (incl. literals inside JS).
-//  - Patches the two OFF+BRAND base-URL constants (rive + gl) to local.
+//  - Patches the OFF+BRAND base-URL constants (rive + gl + npm CDNs) to local.
 //  - Strips broken dev-artifact <script> tags (lando.itsoffbrand.io/dev-js/* that 403, localhost:6645).
-//  - Emits: site/<route>.html, and rewrites in-place under site/assets/{css,js}.
+//  - Emits: <route>.html at project root, rewrites in-place under public/assets/{css,js}.
+// After this, run:  node fix-html.js   then   node inject-react.js   to normalize HTML and add
+// the React mount, producing a Vite-ready project.
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 
@@ -69,8 +71,8 @@ const JS_PATCHES = [
   ['https://cdn.jsdelivr.net/', '/assets/cdn/jsdelivr/'],     // (fallback) npm base
 ];
 
-await mkdir(`${ROOT}/site`, { recursive: true });
-await mkdir(`${ROOT}/site/legal`, { recursive: true });
+await mkdir(`${ROOT}`, { recursive: true });
+await mkdir(`${ROOT}/legal`, { recursive: true });
 
 let htmlCount = 0;
 for (const [src, dest] of ROUTES) {
@@ -82,13 +84,13 @@ for (const [src, dest] of ROUTES) {
   html = stripSRI(html);
   // localize urls
   html = rewrite(html);
-  await writeFile(`${ROOT}/site/${dest}`, html);
+  await writeFile(`${ROOT}/${dest}`, html);
   htmlCount++;
 }
 console.log(`wrote ${htmlCount} html pages`);
 
 // CSS
-const cssDir = `${ROOT}/site/assets/css`;
+const cssDir = `${ROOT}/public/assets/css`;
 if (existsSync(cssDir)) {
   for (const f of await readdir(cssDir)) {
     if (!f.endsWith('.css')) continue;
@@ -104,7 +106,7 @@ if (existsSync(cssDir)) {
 // JS (bundles): localize url literals, then patch base constants. Walk ALL .js under site/assets
 // (js/, data/, cdn/) so no unpatched bundle copy can run.
 async function walkJs(dir, out = []) { for (const e of await readdir(dir, { withFileTypes: true })) { const p = `${dir}/${e.name}`; if (e.isDirectory()) await walkJs(p, out); else if (e.name.endsWith('.js') || e.name.endsWith('.mjs')) out.push(p); } return out; }
-const jsFiles = existsSync(`${ROOT}/site/assets`) ? await walkJs(`${ROOT}/site/assets`) : [];
+const jsFiles = existsSync(`${ROOT}/public/assets`) ? await walkJs(`${ROOT}/public/assets`) : [];
 for (const p of jsFiles) {
   let s = await readFile(p, 'utf8');
   const before = s.length;
@@ -115,7 +117,7 @@ for (const p of jsFiles) {
       if (s.includes(from)) { s = s.split(from).join(to); patched++; }
     }
   }
-  if (before !== s.length || patched) { await writeFile(p, s); console.log(`js ${p.replace(ROOT + '/site/assets/', '')}: ${before} -> ${s.length} (patches:${patched})`); }
+  if (before !== s.length || patched) { await writeFile(p, s); console.log(`js ${p.replace(ROOT + '/public/assets/', '')}: ${before} -> ${s.length} (patches:${patched})`); }
 }
 
 console.log('\nrewrite complete. Verify: open site/index.html via a static server.');

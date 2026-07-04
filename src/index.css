@@ -1,0 +1,9 @@
+/*
+ * Tailwind entry. Preflight (the base reset) is DISABLED in tailwind.config.js so it never
+ * overrides the Webflow design system. Utilities are generated only for classes actually used
+ * in ./*.html and ./src/** — so by default this file is near-empty and the Webflow CSS owns
+ * the look. Use Tailwind utilities freely in new React components.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

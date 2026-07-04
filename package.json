@@ -1,0 +1,28 @@
+{
+  "name": "lando-norris-clone",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "1:1 reconstruction of landonorris.com — Vite + React + TypeScript wrapper around the real Webflow CSS + OFF+BRAND interaction bundle.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "gsap": "^3.12.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.0"
+  }
+}

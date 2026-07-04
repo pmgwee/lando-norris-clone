@@ -1,5 +1,5 @@
 // verify-local.js
-// Serves site/ locally, loads each page in headless Chromium (same viewports/scroll cadence as
+// Serves the BUILT dist/ (run `npm run build` first), loads each page in headless Chromium (same viewports/scroll cadence as
 // capture-prod.js), captures local screenshots + console errors, and diffs each local frame
 // against the matching production reference (mean abs pixel diff via raw RGBA). Writes:
 //   assets-prod/local-screenshots/<page>_<vp>_<n>.png
@@ -12,7 +12,7 @@ import { chromium } from 'playwright';
 import zlib from 'node:zlib';
 
 const ROOT = '..';
-const SITE = join(ROOT, 'site');
+const SITE = join(ROOT, 'dist');
 const REF = join(ROOT, 'assets-prod/screenshots');        // production reference
 const OUT = join(ROOT, 'assets-prod/local-screenshots');
 await mkdir(OUT, { recursive: true });

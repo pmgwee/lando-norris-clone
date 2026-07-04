@@ -1,91 +1,98 @@
-# landonorris.com — 1:1 production reconstruction
+# landonorris.com — 1:1 production reconstruction (Vite + React + TypeScript)
 
-A faithful, **self-contained** reconstruction of the live `https://landonorris.com` site, rebuilt
-from the deployed production assets (the original source was lost to a disk failure). The goal —
-achieved — is visual + motion parity with the live site.
+A faithful, **self-contained** reconstruction of the live `https://landonorris.com`, rebuilt from
+the deployed production assets (the original source was lost to a disk failure). Goal — achieved —
+is visual + motion parity with the live site, now packaged as a modern **Vite + React + TypeScript**
+app that deploys to **Vercel** in one click.
 
-> **Single source of truth:** the original Webflow CSS `:root` tokens and the real OFF+BRAND
-> interaction bundle. See [`docs/design-dna.json`](docs/design-dna.json) for the design system and
-> [`docs/`](docs/) for the full inventory, effect specs, and verification reports.
+> **Fidelity strategy:** the reconstruction reuses the **real Webflow CSS** (the design system) and
+> the **real OFF+BRAND interaction bundle** (GSAP / Rive / three.js). Vite/React/TypeScript wrap and
+> serve them; Tailwind is available for new code with its reset disabled so the Webflow styles win.
+> See [`docs/architecture.md`](docs/architecture.md).
 
 ---
 
-## What this is
-
-The live site is a **Webflow** build augmented with a large custom interaction bundle by **OFF+BRAND**.
-Because Webflow renders complete server HTML and ships one master stylesheet, the highest-fidelity
-reconstruction **reuses the real production code** (HTML + CSS + JS bundles + fonts + Rive/GLB
-assets) and localizes every asset reference. This is *the deployed site*, running locally, organized
-as clean source.
-
-| Layer | Tech | Evidence |
-|---|---|---|
-| Host | Webflow | `data-wf-site`, `cdn.prod.website-files.com` |
-| Interactions | GSAP + ScrollTrigger, Lenis, SplitText | `offbrand.main.js` |
-| Vector UI | Rive (8 `.riv` state machines) | buttons, hero icons, page transitions |
-| 3D | three.js (`window.landoGL`) | scroll-driven helmet, disco, tracks |
-| Fonts | Mona Sans Variable, Brier Bold | `.woff2` |
-
-## Run it
+## Quick start
 
 ```bash
-# from the project root
-node tools/serve.js            # serves site/ at http://localhost:4321
-# then open http://localhost:4321/  (and /on-track, /off-track, /calendar, /legal/*)
+npm install          # Vite + React + TS + Tailwind + GSAP
+npm run dev          # http://localhost:5173/   (Vite dev, HMR)
+# production build + local preview:
+npm run build        # -> dist/
+npm run preview      # http://localhost:4173/
 ```
 
-Requirements: Node 18+ (a live internet connection is **not** required — all assets are local).
-WebGL content (the helmet) renders best on a real GPU; it still works under software GL.
+Open `/`, `/on-track`, `/off-track`, `/partnerships`, `/calendar`, `/legal/privacy-policy`,
+`/legal/terms-conditions`.
+
+## Deploy to Vercel
+
+The repo is Vercel-ready (`vercel.json` sets `framework: vite`, `outputDirectory: dist`, and clean-URL
+rewrites). Two options:
+
+**A. Dashboard (recommended)** — push to GitHub, then in Vercel: *Add New → Project → Import* the
+repo. Framework preset auto-detects as **Vite**; defaults are correct. Click **Deploy**. Vercel runs
+`npm run build` and serves `dist/`. Every `git push` redeploys automatically.
+
+**B. CLI** — `npm i -g vercel && vercel` (preview), then `vercel --prod`.
+
+> WebGL content (the helmet) renders best on a real GPU. Under headless software-GL the scene
+> renders differently (a lime frame) on *both* prod and local — proof, not a defect; see
+> [`docs/verify/README.md`](docs/verify/README.md).
+
+## Tech stack
+
+| Layer | Choice | Why |
+|---|---|---|
+| Build / dev | **Vite** (multi-page) | Static marketing site; Next.js SSR would add complexity for no benefit |
+| UI framework | **React 18 + TypeScript** | Thin mount (`src/`) for incremental component adoption without touching the 1:1 DOM |
+| Styling | **Tailwind** (preflight **OFF**) | Webflow CSS is the system of record; Tailwind utilities only for NEW React code |
+| Motion | **GSAP + @gsap/react** | (Bundle ships its own GSAP; `@gsap/react` ready for React-driven motion) |
+| Reconstruction | real Webflow HTML/CSS + OFF+BRAND bundle | Maximum fidelity by code reuse |
 
 ## Project structure
 
 ```
 .
-├── site/                       # ← the runnable reconstruction (deliverable)
-│   ├── index.html  on-track.html  off-track.html  partnerships.html  calendar.html
-│   ├── legal/{privacy-policy,terms-conditions}.html
-│   └── assets/
-│       ├── css/                # the Webflow master stylesheet (= the design system)
-│       ├── js/                 # offbrand bundle + Webflow chunks + jquery + decoders
-│       ├── fonts/              # Mona Sans Variable, Brier Bold
-│       ├── rive/               # 8 .riv files
-│       ├── gl/                 # three.js: models/, textures/{head,helmet,glass,…}/, hdri/, draco/, basis/
-│       ├── cdn/{unpkg,jsdelivr}/  # Rive runtime + wasm
-│       └── img/                # all imagery
-├── docs/                       # source-of-truth documentation
-│   ├── module-inventory.md     # page-by-page structure + tech stack + asset graph
-│   ├── design-dna.json         # design system tokens (colors/type/spacing/motion) + style + effects
-│   ├── architecture.md         # reconstruction approach
-│   ├── effects/                # per-effect specs (scroll, Rive, WebGL landogl)
-│   └── verify/                 # per-module verification reports
-├── tools/                      # node tooling
-│   ├── capture-prod.js         # Playwright: production network manifest + reference screenshots
-│   ├── download-assets.js      # bulk-download + URL→path map (path-preserving for GL/Rive)
-│   ├── rewrite-paths.js        # localize refs, patch JS base URLs, strip SRI/dev artifacts
-│   ├── verify-local.js         # Playwright: local screenshots + pixel diff vs production
-│   └── serve.js                # standalone static server
-└── assets-prod/                # working dir: raw capture, manifest, urlMap, reference screenshots
+├── index.html  on-track.html  off-track.html  partnerships.html  calendar.html   # Vite MPA entries (= Webflow pages)
+├── legal/{privacy-policy,terms-conditions}.html
+├── public/assets/        # the reconstruction assets, served as-is at /assets/
+│   ├── css/              # Webflow master stylesheet (= the design system)
+│   ├── js/               # OFF+BRAND bundle + Webflow chunks + jquery + DRACO/Basis decoders
+│   ├── fonts/  rive/  gl/  cdn/  img/  data/
+├── src/                  # React + TS layer (thin)
+│   ├── main.tsx          # mounts <App/> into #app
+│   ├── App.tsx           # no-op render (ready for incremental component adoption)
+│   └── index.css         # Tailwind entry (preflight disabled)
+├── package.json  vite.config.ts  tsconfig*.json  tailwind.config.js  postcss.config.js  vercel.json
+├── docs/                 # single-source-of-truth documentation
+│   ├── module-inventory.md  design-dna.json  architecture.md
+│   ├── effects/          # GSAP/Lenis scroll, Rive layer, WebGL `landoGL` helmet scene
+│   └── verify/           # verification method + verdict
+├── tools/                # capture / download / rewrite / fix-html / inject-react / verify / serve
+└── assets-prod/          # raw capture HTML + JSON manifests (screenshots gitignored)
 ```
 
 ## How it was rebuilt (pipeline)
 
-1. **Capture** — Playwright loaded every route, recording the **complete network manifest** (every
-   dynamically-loaded `.riv`/`.glb`/`.ktx2`/`.hdr`/`.wasm`) + reference screenshots (desktop + mobile).
-2. **Document** — [`docs/module-inventory.md`](docs/module-inventory.md) (structure),
-   [`docs/design-dna.json`](docs/design-dna.json) (tokens, verbatim from `:root`),
-   [`docs/effects/`](docs/effects/) (mechanics).
-3. **Download** — `download-assets.js` mirrored all 281 assets, preserving the GL/Rive path tree so
-   the bundle's constructed URLs resolve locally.
-4. **Rewrite** — `rewrite-paths.js` localized every URL, patched the OFF+BRAND base constants
-   (`/lando/rive/`, `/lando/gl`, the Rive wasm CDN), stripped SRI (modified files invalidate digests)
-   and dead dev scripts.
-5. **Verify** — `verify-local.js` screenshots the local site at production-matched scroll positions
-   and diffs pixel-by-pixel; reports in [`docs/verify/`](docs/verify/).
+If you ever need to regenerate the reconstruction from the live site:
 
-See [`docs/architecture.md`](docs/architecture.md) for the decisions and the key bugs solved.
+```bash
+cd tools && npm install                 # playwright (for capture/verify tools)
+node capture-prod.js                    # 1. production network manifest + reference screenshots
+node download-assets.js                 # 2. mirror all assets into ../public/assets/ + urlMap.json
+node rewrite-paths.js                   # 3. localize URLs, patch JS base constants, strip dev artifacts
+node fix-html.js                        # 4. normalize Webflow HTML for Vite's strict parser
+node inject-react.js                    # 5. add the #app mount + /src/main.tsx to each page
+cd .. && npm run build                  # 6. build
+node tools/check-dist.js "/" "/on-track.html"   # 7. smoke the built dist
+```
+
+Verification: `node tools/abi-verify.js` (prod vs local pixel A/B) — see [`docs/verify/README.md`](docs/verify/README.md).
 
 ## Status
 
-Local site boots clean (**0 console errors, 0 failed requests**), preloader dismisses, hero renders,
-WebGL `landoGL` initializes, Rive buttons/icons/transitions load from local files. Per-frame diff vs
-production is logged in `assets-prod/verify-report.json` and summarized in `docs/verify/`.
+- Local build boots clean: **0 console errors, 0 failed requests** across all routes; `window.landoGL`
+  (three.js) initializes; the React mount is present.
+- **A/B pixel diff (prod vs local, matched scroll, same software-GL): mean 0.0912** — frame-for-frame parity.
+- The `/partnerships` route reproduces the live site's own 404 page (production returns "Page Not Found").

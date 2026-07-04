@@ -1,5 +1,9 @@
-# Dependencies (reinstall with: cd tools && npm install)
+# Dependencies
+node_modules/
 tools/node_modules/
+
+# Build output (regenerate with: npm run build)
+dist/
 
 # Regenerable screenshot banks (run tools/capture-prod.js / tools/abi-verify.js to recreate).
 # Kept out of git to avoid ~70 MB of PNGs; the small JSON manifests below ARE tracked as evidence.
@@ -15,3 +19,6 @@ desktop.ini
 
 # Playwright
 ms-playwright/
+
+# Vercel
+.vercel/

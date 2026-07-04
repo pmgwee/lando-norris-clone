@@ -1,14 +1,14 @@
-// serve.js — standalone static server for the reconstructed site/.
-// Usage: node tools/serve.js [port]   (default 4321)
-// Handles clean URLs (/on-track -> on-track.html) and all asset MIME types.
+// serve.js — standalone static server for the BUILT site (dist/).
+// Usage: node tools/serve.js [port]   (default 4321)   — run `npm run build` first.
+// Prefer `npm run dev` (Vite dev, HMR) or `npm run preview` (Vite preview of dist) in most cases.
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, extname, dirname, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Resolve site/ relative to this script (tools/), so it works regardless of cwd.
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', 'site');
+// Resolve dist/ relative to this script (tools/), so it works regardless of cwd.
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 const PORT = +(process.argv[2] || 4321);
 const M = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
