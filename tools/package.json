@@ -1,0 +1,16 @@
+{
+  "name": "lando-rebuild-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Capture, download, and verify tooling for the landonorris.com 1:1 reconstruction",
+  "scripts": {
+    "capture": "node capture-prod.js",
+    "download": "node download-assets.js",
+    "rewrite": "node rewrite-paths.js",
+    "verify": "node verify-local.js"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

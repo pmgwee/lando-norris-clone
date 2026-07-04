@@ -1,0 +1,772 @@
+{
+  "frames": [
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 0,
+      "diff": 0.0012,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 1,
+      "diff": 0.0012,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 2,
+      "diff": 0.0112,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 3,
+      "diff": 0.0314,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 4,
+      "diff": 0.037,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 5,
+      "diff": 0.0464,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 6,
+      "diff": 0.0269,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 7,
+      "diff": 0.0248,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 8,
+      "diff": 0.0191,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 9,
+      "diff": 0.0222,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 10,
+      "diff": 0.0333,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 11,
+      "diff": 0.0111,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 12,
+      "diff": 0.022,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 13,
+      "diff": 0.0119,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 14,
+      "diff": 0.0065,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 15,
+      "diff": 0.0119,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 16,
+      "diff": 0.0009,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "d",
+      "idx": 17,
+      "diff": 0.0019,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 0,
+      "diff": 0.5043,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 1,
+      "diff": 0.5074,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 2,
+      "diff": 0.5112,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 3,
+      "diff": 0.3731,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 4,
+      "diff": 0.3808,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 5,
+      "diff": 0.377,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 6,
+      "diff": 0.2185,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 7,
+      "diff": 0.1624,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 8,
+      "diff": 0.1772,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 9,
+      "diff": 0.4946,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 10,
+      "diff": 0.1345,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 11,
+      "diff": 0.3843,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 12,
+      "diff": 0.3034,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 13,
+      "diff": 0.362,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "home",
+      "vp": "m",
+      "idx": 14,
+      "diff": 0.3728,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 0,
+      "diff": 0.564,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 1,
+      "diff": 0.544,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 2,
+      "diff": 0.4752,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 3,
+      "diff": 0.2882,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 4,
+      "diff": 0.2273,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 5,
+      "diff": 0.4794,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 6,
+      "diff": 0.2578,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 7,
+      "diff": 0.1897,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 8,
+      "diff": 0.2401,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 9,
+      "diff": 0.1447,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 10,
+      "diff": 0.1804,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 11,
+      "diff": 0.1526,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 12,
+      "diff": 0.1801,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 13,
+      "diff": 0.2871,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 14,
+      "diff": 0.138,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 15,
+      "diff": 0.1864,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 16,
+      "diff": 0.2595,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 17,
+      "diff": 0.083,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 18,
+      "diff": 0.151,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 19,
+      "diff": 0.1061,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "d",
+      "idx": 20,
+      "diff": 0.1119,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 0,
+      "diff": 0.562,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 1,
+      "diff": 0.486,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 2,
+      "diff": 0.4614,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 3,
+      "diff": 0.4247,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 4,
+      "diff": 0.1232,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 5,
+      "diff": 0.2825,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 6,
+      "diff": 0.2565,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 7,
+      "diff": 0.2103,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 8,
+      "diff": 0.1925,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 9,
+      "diff": 0.192,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 10,
+      "diff": 0.1815,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 11,
+      "diff": 0.0936,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 12,
+      "diff": 0.1705,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 13,
+      "diff": 0.1709,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 14,
+      "diff": 0.1994,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 15,
+      "diff": 0.1495,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "on-track",
+      "vp": "m",
+      "idx": 16,
+      "diff": 0.1649,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 0,
+      "diff": 0.377,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 1,
+      "diff": 0.3788,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 2,
+      "diff": 0.386,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 3,
+      "diff": 0.402,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 4,
+      "diff": 0.4038,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 5,
+      "diff": 0.395,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 6,
+      "diff": 0.1863,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "d",
+      "idx": 7,
+      "diff": 0.186,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 0,
+      "diff": 0.3839,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 1,
+      "diff": 0.4089,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 2,
+      "diff": 0.3968,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 3,
+      "diff": 0.3899,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 4,
+      "diff": 0.3876,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 5,
+      "diff": 0.3814,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 6,
+      "diff": 0.4209,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 7,
+      "diff": 0.4159,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "off-track",
+      "vp": "m",
+      "idx": 8,
+      "diff": 0.4266,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "partnerships",
+      "vp": "d",
+      "idx": 0,
+      "diff": 0.5326,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "partnerships",
+      "vp": "d",
+      "idx": 1,
+      "diff": 0.5324,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "partnerships",
+      "vp": "m",
+      "idx": 0,
+      "diff": 0.5229,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "partnerships",
+      "vp": "m",
+      "idx": 1,
+      "diff": 0.5236,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 0,
+      "diff": 0.5456,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 1,
+      "diff": 0.5116,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 2,
+      "diff": 0.526,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 3,
+      "diff": 0.0977,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 4,
+      "diff": 0.1906,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 5,
+      "diff": 0.1913,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 6,
+      "diff": 0.1226,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "d",
+      "idx": 7,
+      "diff": 0.1271,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "m",
+      "idx": 0,
+      "diff": 0.3889,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "m",
+      "idx": 1,
+      "diff": 0.3508,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "m",
+      "idx": 2,
+      "diff": 0.5683,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "m",
+      "idx": 3,
+      "diff": 0.5293,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "m",
+      "idx": 4,
+      "diff": 0.2438,
+      "note": "meanAbsDiffRGB"
+    },
+    {
+      "page": "calendar",
+      "vp": "m",
+      "idx": 5,
+      "diff": 0.3045,
+      "note": "meanAbsDiffRGB"
+    }
+  ],
+  "consoleErrors": {
+    "home/d": [],
+    "home/m": [],
+    "on-track/d": [],
+    "on-track/m": [],
+    "off-track/d": [],
+    "off-track/m": [],
+    "partnerships/d": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "FAIL http://localhost:4321/nvhc9u4gxsagNjdiNWEwMmRjNWQzMzg5NjBiMTdhN2U5/Cfd3dFR423I13UX8BGRslFKw2jo net::ERR_ABORTED"
+    ],
+    "partnerships/m": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "FAIL http://localhost:4321/nvhc9u4gxsagNjdiNWEwMmRjNWQzMzg5NjBiMTdhN2U5/Cfd3dFR423I13UX8BGRslFKw2jo net::ERR_ABORTED"
+    ],
+    "calendar/d": [],
+    "calendar/m": [],
+    "privacy/d": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "privacy/m": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "terms/d": [],
+    "terms/m": []
+  }
+}

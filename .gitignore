@@ -1,0 +1,17 @@
+# Dependencies (reinstall with: cd tools && npm install)
+tools/node_modules/
+
+# Regenerable screenshot banks (run tools/capture-prod.js / tools/abi-verify.js to recreate).
+# Kept out of git to avoid ~70 MB of PNGs; the small JSON manifests below ARE tracked as evidence.
+assets-prod/screenshots/
+assets-prod/local-screenshots/
+assets-prod/abi/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Playwright
+ms-playwright/

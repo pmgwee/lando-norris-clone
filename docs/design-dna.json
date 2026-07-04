@@ -1,0 +1,166 @@
+{
+  "$schema": "lando-design-dna/v1",
+  "meta": {
+    "source": "https://landonorris.com",
+    "captured": "2026-07-04",
+    "method": "Extracted from production Webflow `:root` tokens (CSS) + GSAP ease analysis (offbrand.main.js) + Playwright reference screenshots. Quantitative values are authoritative from source, not visual estimates.",
+    "designBy": "OFF+BRAND (itsoffbrand.io)",
+    "platform": "Webflow + custom three.js / Rive / GSAP bundle",
+    "truthRule": "For any module: colors, type scale, spacing, radius, easing, breakpoints MUST come from this file. Effects mechanics MUST come from docs/effects/*.md."
+  },
+
+  "designSystem": {
+    "color": {
+      "note": "All hex values verbatim from `:root` in lando.shared.css. Roles inferred from usage + screenshots.",
+      "tokens": {
+        "--color--dark-green": { "hex": "#282c20", "role": "Primary dark surface (footer, dark sections, off-track)", "temperature": "warm-dark" },
+        "--color--black": { "hex": "#111112", "role": "True black (text on light, deep backgrounds)", "temperature": "neutral" },
+        "--color--white": { "hex": "#f4f4ed", "role": "Primary light surface (hero, light sections) — warm off-white", "temperature": "warm-light" },
+        "--color--cream": { "hex": "#efefe5", "role": "Alternate light surface / cards", "temperature": "warm-light" },
+        "--color--green-light": { "hex": "#ebeee0", "role": "Light green-grey surface", "temperature": "warm-light" },
+        "--color--grey-1": { "hex": "#ebeee0", "role": "Grey tier 1 (= green-light)", "temperature": "neutral" },
+        "--color--grey-2": { "hex": "#c8cbbd", "role": "Grey tier 2 (muted text/dividers)", "temperature": "neutral" },
+        "--color--green-off-white-1": { "hex": "#dde1d2", "role": "Off-white green 1", "temperature": "warm-light" },
+        "--color--green-off-white-2": { "hex": "#b4b8a5", "role": "Off-white green 2 (muted)", "temperature": "warm-light" },
+        "--color--grey-on-track": { "hex": "#b9bbad", "role": "On-track grey accent", "temperature": "neutral" },
+        "--color--dark-green-tint-1": { "hex": "#3b3c38", "role": "Dark surface tint 1 (raised elements on dark)", "temperature": "warm-dark" },
+        "--color--dark-green-tint-2": { "hex": "#535450", "role": "Dark surface tint 2 (borders/secondary on dark)", "temperature": "warm-dark" },
+        "--color--lime": { "hex": "#d2ff00", "role": "PRIMARY ACCENT — McLaren-papaya-adjacent electric lime. CTAs, active states, highlights", "temperature": "warm-acid" },
+        "--color--lime-off": { "hex": "#b2c73a", "role": "Accent tint (hover/secondary accent)", "temperature": "warm" },
+        "--color--lime-zero": { "hex": "#d2ff0000", "role": "Transparent lime (alpha 0) for transitions", "temperature": "transparent" },
+        "--color--orange": { "hex": "#ff6b00", "role": "Secondary warm accent (rare, callouts)", "temperature": "warm" }
+      },
+      "pairings": {
+        "lightMode": "surface #f4f4ed / #efefe5  +  ink #111112  +  accent #d2ff00",
+        "darkMode": "surface #282c20 / #111112  +  ink #f4f4ed  +  accent #d2ff00",
+        "rule": "Hero & on-track default to LIGHT; footer & off-track default to DARK. Lime #d2ff00 is the single signature accent used sparingly."
+      }
+    },
+
+    "typography": {
+      "families": {
+        "display": { "name": "Brier", "weight": 700, "source": "Brier-Bold.woff2", "role": "Impact headings, marquees, large numerals (editorial/display)" },
+        "body": { "name": "Mona Sans Variable", "axes": "wdth, wght 200–900", "source": "MonaSans-VariableFont_wdth,wght.woff2", "role": "All UI, body, nav, buttons (workhorse variable sans)" }
+      },
+      "scale": {
+        "note": "rem values verbatim from `--text--*` tokens. Base context assumed 16px.",
+        "--text--impact": { "rem": 7.9375, "px": 127, "role": "Marquee / oversized display (e.g. ON TRACK / OFF TRACK)" },
+        "--text--h2": { "rem": 4.5, "px": 72, "role": "Section headlines" },
+        "--text--h1": { "rem": 4.0, "px": 64, "role": "Primary headings" },
+        "--text--med": { "rem": 2.76, "px": 44, "role": "Medium statement text" },
+        "--text--h3": { "rem": 2.0, "px": 32, "role": "Subheads" },
+        "--text--reg": { "rem": 1.6, "px": 25.6, "role": "Lead/body large" },
+        "--text--h4": { "rem": 1.5, "px": 24, "role": "Card titles" },
+        "--text--h5": { "rem": 1.2, "px": 19.2 },
+        "--text--btn-footer": { "rem": 1.875, "px": 30, "role": "Footer link size" },
+        "--text--btn-nav": { "rem": 1.25, "px": 20, "role": "Nav / large buttons" },
+        "--text--h6": { "rem": 1.0, "px": 16 },
+        "--text--btn-primary": { "rem": 1.0, "px": 16, "role": "Primary button label" },
+        "--text--eyebrow": { "rem": 0.578125, "px": 9.25, "role": "Uppercase micro-eyebrows (NEXT RACE, section tags)" }
+      },
+      "treatment": {
+        "eyebrows": "Uppercase, tight tracking, ~9–10px, often Brier or Mona Sans uppercase",
+        "displayWeight": "Brier Bold, sometimes stretched via font-stretch (Mona Sans wdth axis)",
+        "letterforms": "Editorial, slightly humanist; large negative space around display type"
+      }
+    },
+
+    "spacing": {
+      "scale": {
+        "--padding--container": "1.25rem (20px) — horizontal page gutter",
+        "--padding--mini": "1rem (16px)",
+        "--padding--small": "2rem (32px)",
+        "--padding--med": "3rem (48px)",
+        "--padding--large": "4rem (64px)",
+        "--padding--xlarge": "5rem (80px)",
+        "--gap": "1.25rem (20px)"
+      },
+      "layout": {
+        "--grid-col": "25.4375rem (column width)",
+        "--grid-spacer": "31.51vh (vertical rhythm / section spacer)",
+        "--on-t-nav-spacer": "5.375rem (fixed nav offset)",
+        "--oval-side-offset": "3rem",
+        "--poduim-offset": "-17.5rem"
+      },
+      "rhythm": "Vertical sections separated by large ~31vh spacers; generous negative space is core to the brand."
+    },
+
+    "radius": {
+      "--radius--small": "1rem (16px) — chips, small cards",
+      "--radius--med": "3rem (48px) — cards, buttons in some contexts",
+      "--radius--large": "6.25rem (100px) — large pill/oval containers"
+    },
+
+    "elevation": {
+      "philosophy": "Mostly flat / editorial. Shadows used sparingly.",
+      "shadows": [
+        "0 0 0 1px #0000001a, 0 1px 3px #0000001a  (subtle card lift)",
+        "0 0 3px #3336                              (soft glow)",
+        "0 0 0 2px #fff                             (ring)"
+      ]
+    },
+
+    "breakpoints": {
+      "note": "Webflow max-width cascade. Mobile-first base styles; overrides at each max-width.",
+      "desktop": "min-width 992px (default)",
+      "tablet": "max-width 991px",
+      "mobile-landscape": "max-width 767px",
+      "mobile": "max-width 479px",
+      "also": "min-width 768px (enhancements)"
+    },
+
+    "motion": {
+      "cssEasing": { "signature": "cubic-bezier(.19, 1, .22, 1)", "aka": "expo.out approximation — premium deceleration", "usage": "all CSS transitions" },
+      "cssDurations": ["0.2s (micro/hover)", "0.6s (surface)"],
+      "gsapEases": {
+        "dominant": "expo.inOut / expo.in / expo.out  (matches CSS signature curve)",
+        "secondary": "power4, power3.inOut, power2.inOut, power1.inOut",
+        "scrub": "ease:'none' — scroll-bound timelines progress linearly with Lenis scroll",
+        "rule": "Entrances/exits use expo; scroll-scrubbed sections use ease:none (progress = scroll position)."
+      },
+      "keyframes": ["spin (loader only)"],
+      "principles": [
+        "Smooth-scroll (Lenis) is global; everything feels inertia-driven.",
+        "Reveals decelerate with expo — slow-out, never bouncy.",
+        "Scroll-scrubbed pin/horizontal sections map 1:1 to scroll progress (no easing on scrub).",
+        "Micro-interactions (Rive buttons) are snappy (~0.2–0.6s)."
+      ]
+    }
+  },
+
+  "designStyle": {
+    "mood": ["confident", "calm", "premium", "technical", "restrained", "athletic-editorial"],
+    "visualLanguage": {
+      "composition": "Generous negative space; off-grid editorial layouts; large display type offset by tiny uppercase eyebrows; asymmetric balance.",
+      "imagery": "High-contrast photography (helmet, on-track) + abstract topographic/fluid line motifs + vector Rive line-art (circuits, signature).",
+      "texture": "Mostly flat with subtle organic line overlays; minimal shadow; material = matte paper (light) / carbon (dark).",
+      "colorDiscipline": "Strict — warm off-white vs. warm dark-green duotone, with ONE electric lime accent used as a magnet for attention (STORE, active, highlights)."
+    },
+    "interactionTemperament": {
+      "pace": "Slow, inertia-driven; never jumpy. Lenis smooth scroll sets the cadence.",
+      "feedback": "Vector (Rive) micro-interactions on buttons/icons; scroll-scrubbed reveals; WebGL helmet reacts to scroll velocity.",
+      "personality": "Engineering-precise but warm. Motion is patient and decelerating (expo)."
+    },
+    "brandVoice": {
+      "tone": "Understated, first-person, competitive-but-classy ('Always bringing the fight.')",
+      "signature": "Tiny uppercase eyebrows + huge Brier display = the brand's typographic signature."
+    },
+    "compositionRules": [
+      "Hero = light surface, topographic motif, top-left wordmark, top-right lime STORE CTA + menu toggle, bottom-left 'NEXT RACE' card.",
+      "Marquee bands use impact/oversized Brier on dark or lime.",
+      "Sections alternate light/dark to create rhythm; lime is the only chromatic punctuation."
+    ]
+  },
+
+  "visualEffects": {
+    "checklist": [
+      { "id": "lenis-smooth-scroll", "summary": "Global Lenis smooth/inertia scroll; drives all scroll-bound motion.", "doc": "docs/effects/scroll-gsap-lenis.md" },
+      { "id": "gsap-scrolltrigger", "summary": "Pinned + horizontal (`is-horizontal-track`) sections, reveal-on-scroll, marquee, SplitText heading reveals. Scrubbed with ease:none.", "doc": "docs/effects/scroll-gsap-lenis.md" },
+      { "id": "rive-buttons", "summary": "Interactive buttons via btn-ui.riv state machines (hover/press/invert). data-rive-* attributes wire inputs.", "doc": "docs/effects/rive-layer.md" },
+      { "id": "rive-icons", "summary": "Hero/section decorative loops: signature.riv, circuits.riv, reef.riv, phrases.riv, ln4.riv, mob-landscape.riv.", "doc": "docs/effects/rive-layer.md" },
+      { "id": "rive-page-transitions", "summary": "Rive-driven page transitions (page-transition.riv) via transitions-rive-isolate.js.", "doc": "docs/effects/rive-layer.md" },
+      { "id": "webgl-landogl", "summary": "three.js scene in window.landoGL: scroll-driven 3D helmet (helmet-21.glb), disco (disco-02.glb), tracks (tracks.glb); custom shaders; fed by Lenis velocity + reveal uniform.", "doc": "docs/effects/webgl-landogl.md" },
+      { "id": "topographic-flow", "summary": "Hero abstract flowing/topographic line motif (WebGL shader or Rive circuits) on light surface.", "doc": "docs/effects/webgl-landogl.md" }
+    ]
+  }
+}
